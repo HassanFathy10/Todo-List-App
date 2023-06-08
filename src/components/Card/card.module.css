@@ -1,0 +1,26 @@
+.card{
+    border:5px solid gold;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position:relative;
+}
+
+
+.deleteBtn{
+    position: absolute;
+    cursor: pointer;
+    right: -10px;
+    top: -15px;
+    background-color: aliceblue;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.deleteBtn:hover{
+    background-color: red;
+}  
