@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './App.module.css'
-import Card from '../Card/Card';
-import Filter from '../filter/Filter';
+import Card from '../components/Card/card';
+import Filter from '../components/filter/Filter';
 
 const App = () => {
     // const inputEl = useRef(null);

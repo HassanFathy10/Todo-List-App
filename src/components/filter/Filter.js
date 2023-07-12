@@ -13,7 +13,6 @@ const Filter = ({filteration}) => {
 return (
     <div className={Styles.mp}>
         <input type='text' placeholder='filter by name' value={filter} onChange={filterHandler}></input>
-        <button>Click Me</button>
     </div>
 )
 }
