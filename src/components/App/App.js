@@ -9,17 +9,17 @@ const App = () => {
     const [cardToggle, setCardToggle] = useState(false);
     const [filter, setfilter] = useState("")
     const [state , newState] = useState([{
-        name: "Hassan",
+        name: "hassan",
         Age: 23,
         phone: "013565659494"
     },
     {
-        name: "Ahmed",
+        name: "ahmed",
         Age: 21,
         phone: "013565652494"
     },
     {
-        name: "Kareem",
+        name: "kareem",
         Age: 22,
         phone: "013565655"
     },
@@ -45,6 +45,9 @@ const App = () => {
     };
 
     const namesHandler = () => {
+        if (filter.length !== 0) {
+            return state.filter((el) => el.name.includes(filter));
+        }
         return state;
     };
 return (
