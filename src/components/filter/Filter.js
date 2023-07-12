@@ -5,7 +5,8 @@ const Filter = () => {
     const [filter, setfilter] = useState("");
 
     const filterHandler = (e) => {
-        setfilter(e.target.value);
+        const name = e.target.value;
+        setfilter(name)
     };
 
 return (
