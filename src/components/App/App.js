@@ -3,33 +3,45 @@ import styles from './App.module.css'
 import Card from '../Card/Card';
 import Filter from '../filter/Filter';
 
-
 const App = () => {
     // const inputEl = useRef(null);
     const [cardToggle, setCardToggle] = useState(false);
     const [filter, setfilter] = useState("")
-    const [state , newState] = useState([{
+    const [state, newState] = useState([{
+        id: 1,
         name: "hassan",
-        Age: 23,
-        phone: "013565659494"
+        Age: 24,
+        phone: "01143814036",
+        type : "boy"
     },
     {
-        name: "ahmed",
-        Age: 21,
-        phone: "013565652494"
+        id: 2,
+        name: "yasmeen",
+        Age: 25,
+        phone: "013565659494",
+        type: "girl"
     },
     {
+        id: 3,
         name: "kareem",
         Age: 22,
-        phone: "013565655"
+        phone: "013565655",
+        type : "boy"
+    },
+    {
+        id: 4,
+        name: "jessy",
+        Age: 21,
+        phone: "013565652494",
+        type : "girl"
     },
     ]);
-    const deleteHandeler = (e, clickedIndex) => {
+    const deleteHandeler = (e, selectedId) => {
         // const deleteOberation = state.filter((e, index) => (index !== clickedIndex));
         // newState(deleteOberation);
         
         newState((prevState) => {
-            return prevState.filter((e, index) => (index !== clickedIndex));
+            return prevState.filter((el) => (el.id !== selectedId));
         });
         console.log("inside", state); // old info
     };
@@ -56,7 +68,7 @@ return (
         <button onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
-        <Card namesList={namesHandler()} type="men" deleteFunc={deleteHandeler}></Card>
+        <Card namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></Card>
         </div>
     </div>
 )}
