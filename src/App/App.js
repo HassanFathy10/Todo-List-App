@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import styles from './App.module.css'
-import Card from '../components/Card/card';
+import styles from './App.module.css';
 import Filter from '../components/filter/Filter';
+import CardList from '../components/Cardlist/cardList';
+import Modal from '../components/Modal/Modal';
 
 const App = () => {
     // const inputEl = useRef(null);
@@ -62,13 +63,14 @@ const App = () => {
         }
         return state;
     };
-return (
+    return (
     <div className={styles.main}>
-        <h1>Boys Data</h1>
+        <Modal></Modal>
+        <h1>List of Data</h1>
         <button onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
-        <Card namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></Card>
+        <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
         </div>
     </div>
 )}
