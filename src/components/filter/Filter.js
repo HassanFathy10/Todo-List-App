@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import Styles from './Filter.module.css';
 
-const Filter = () => {
+const Filter = ({filteration}) => {
     const [filter, setfilter] = useState("");
 
     const filterHandler = (e) => {
         const name = e.target.value;
-        setfilter(name)
+        setfilter(name);
+        filteration(name);
     };
 
 return (

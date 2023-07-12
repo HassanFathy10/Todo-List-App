@@ -7,6 +7,7 @@ import Filter from '../filter/Filter';
 const App = () => {
     // const inputEl = useRef(null);
     const [cardToggle, setCardToggle] = useState(false);
+    const [filter, setfilter] = useState("")
     const [state , newState] = useState([{
         name: "Hassan",
         Age: 23,
@@ -39,14 +40,20 @@ const App = () => {
     // const testHandler = () => console.log(inputEl.current.value);
     
     // const onClick = ()=> inputEl.current.focus();
+    const namesFilter = (names) => {
+        setfilter(names);
+    };
 
+    const namesHandler = () => {
+        return state;
+    };
 return (
     <div className={styles.main}>
         <h1>Boys Data</h1>
         <button onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
-            <Filter></Filter>
-        <Card namesList={state} type="men" deleteFunc={deleteHandeler}></Card>
+            <Filter filteration={namesFilter}></Filter>
+        <Card namesList={namesHandler()} type="men" deleteFunc={deleteHandeler}></Card>
         </div>
     </div>
 )}
