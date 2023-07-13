@@ -70,7 +70,7 @@ const App = () => {
             <h1>List of Data</h1>
             <div style={{ "display" : "flex", "justifyContent" : "center" ,"width" : "20%" }}>
                 <button className={styles.button} onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
-                <button style={{ "marginLeft": "20%" }} className={styles.button} onClick={()=> setShowModal(true)}>New Record</button>
+                <button style={{ "marginLeft": "20%" }} className={styles.button} onClick={() => setShowModal(true)}>New Record</button>
             </div>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
