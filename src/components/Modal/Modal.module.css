@@ -13,7 +13,7 @@
     background-color: white;
     position: absolute;
     top: 20%;
-    height: 50%;
+    padding: 20px;
     width: 40%;
     left: 50%;
     transform: translateX(-50%);

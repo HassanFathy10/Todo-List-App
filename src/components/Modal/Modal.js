@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDom from "react-dom";
+import Form from "../Layout/Form";
 import Styles from "./Modal.module.css";
 
 const Backdrop = ({ close, show }) => {
@@ -7,7 +8,14 @@ const Backdrop = ({ close, show }) => {
 };
 
 const Overlay = ({ show }) => {
-    return <div className={`${Styles.overlay} ${show ? Styles.showOverlay : null}`}></div>
+    return <div className={`${Styles.overlay} ${show ? Styles.showOverlay : null}`}>
+        <Form>
+            <Form.Controller>
+                <label htmlFor="name">Name</label>
+                <input type="name" placeholder="Enter Your Name"></input>
+            </Form.Controller>
+        </Form>
+    </div>
 };
 
 const Modal = ({ show, hide }) => {
