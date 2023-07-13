@@ -7,7 +7,8 @@ import Modal from '../components/Modal/Modal';
 const App = () => {
     // const inputEl = useRef(null);
     const [cardToggle, setCardToggle] = useState(false);
-    const [filter, setfilter] = useState("")
+    const [showModal, setShowModal] = useState(false);
+    const [filter, setfilter] = useState("");
     const [state, newState] = useState([{
         id: 1,
         name: "hassan",
@@ -66,8 +67,11 @@ const App = () => {
     return (
     <div className={styles.main}>
         <Modal></Modal>
-        <h1>List of Data</h1>
-        <button onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
+            <h1>List of Data</h1>
+            <div style={{ "display" : "flex", "justifyContent" : "center" ,"width" : "20%" }}>
+                <button className={styles.button} onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
+                <button style={{ "marginLeft": "20%" }} className={styles.button} onClick={()=> setShowModal(true)}>New Record</button>
+            </div>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
         <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
