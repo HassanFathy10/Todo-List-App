@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import Filter from '../components/filter/Filter';
 import CardList from '../components/Cardlist/cardList';
 import Modal from '../components/Modal/Modal';
+import Button from '../components/Layout/Button';
 
 const App = () => {
     // const inputEl = useRef(null);
@@ -68,9 +69,11 @@ const App = () => {
     <div className={styles.main}>
         <Modal show={showModal} hide={() => setShowModal(false)}></Modal>
             <h1>List of Data</h1>
-            <div style={{ "display" : "flex", "justifyContent" : "center" ,"width" : "20%" }}>
-                <button className={styles.button} onClick={toggleHandler}>{cardToggle ? "Hide Names" : "Show Names"}</button>
-                <button style={{ "marginLeft": "20%" }} className={styles.button} onClick={() => setShowModal(true)}>New Record</button>
+            <div style={{ "display": "flex", "justifyContent": "center", "width": "20%" }}>
+                <Button style={{ marginRight: "50px" }} onClick={toggleHandler}>
+                {cardToggle ? "Hide Names" : "Show Names"}
+                </Button>
+                <Button onClick={() => setShowModal(true)}>New Record</Button>
             </div>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
