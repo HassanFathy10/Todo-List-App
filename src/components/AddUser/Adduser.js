@@ -3,7 +3,7 @@ import Form from "../Layout/Form";
 import Button from "../Layout/Button";
 import Row from "../Layout/Row";
 
-const AddUser = ({addNewUserHandler}) => {
+const AddUser = ({addNewUser}) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
@@ -13,7 +13,7 @@ const AddUser = ({addNewUserHandler}) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        addNewUserHandler({
+        addNewUser({
             id: Math.round(Math.random() * 100),
             name,
             age,

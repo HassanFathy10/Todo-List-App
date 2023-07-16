@@ -15,7 +15,7 @@ const App = () => {
     const [state, newState] = useState([{
         id: 1,
         name: "hassan",
-        Age: "24",
+        age: "24",
         phone: "01143814036",
         Address: "Alexandria",
         type : "boy"
@@ -23,7 +23,7 @@ const App = () => {
     {
         id: 2,
         name: "yasmeen",
-        Age: "25",
+        age: "25",
         phone: "013565659494",
         Address: "Alexandria",
         type: "girl"
@@ -31,24 +31,24 @@ const App = () => {
     {
         id: 3,
         name: "kareem",
-        Age: "22",
+        age: "22",
         phone: "013565655",
-        Address: "Alexandria",
+        address: "Alexandria",
         type : "boy"
     },
     {
         id: 4,
         name: "jessy",
-        Age: "21",
+        age: "21",
         phone: "013565652494",
-        Address: "Alexandria",
+        address: "Alexandria",
         type : "girl"
     },
     ]);
 
     const addNewUserHandler = (data) => {
         console.log(data);
-    }
+    };
 
     const deleteHandeler = (e, selectedId) => {
         // const deleteOberation = state.filter((e, index) => (index !== clickedIndex));
@@ -92,7 +92,7 @@ const App = () => {
                 </div>
             </div>
             <Modal show={showModal} hide={() => setShowModal(false)}>
-                <AddUser addNewUserHandler={addNewUserHandler}></AddUser>
+                <AddUser addNewUser={addNewUserHandler}></AddUser>
             </Modal>
         </Fragment>
 )}
