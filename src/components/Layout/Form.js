@@ -2,7 +2,7 @@ import React from "react";
 import Styles from "./Form.module.css";
 
 const Form = (props) => {
-    return <form>{props.children}</form>;
+    return <form onSubmit={props.onSubmit}>{props.children}</form>;
 };
 
 const Controller = (props) => {

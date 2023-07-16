@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import styles from './App.module.css';
-import Filter from '../components/filter/Filter';
+import FilterInput from '../components/filter/FilterInput';
 import CardList from '../components/Cardlist/cardList';
+import AddUser from '../components/AddUser/Adduser';
 import Modal from '../components/Modal/Modal';
 import Button from '../components/Layout/Button';
 import Row from '../components/Layout/Row';
@@ -71,20 +72,24 @@ const App = () => {
         return state;
     };
     return (
-    <div className={styles.main}>
-        <Modal show={showModal} hide={() => setShowModal(false)}></Modal>
-            <h1>List of Data</h1>
-            <Row>
-                <Button style={{ marginRight: "50px" }} onClick={toggleHandler}>
-                {cardToggle ? "Hide Names" : "Show Names"}
-                </Button>
-                <Button onClick={() => setShowModal(true)}>New Record</Button>
-            </Row>
-        <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
-            <Filter filteration={namesFilter}></Filter>
-        <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
-        </div>
-    </div>
+        <Fragment>
+            <div className={styles.main}>
+                    <h1>List of Data</h1>
+                    <Row>
+                        <Button style={{ marginRight: "50px" }} onClick={toggleHandler}>
+                        {cardToggle ? "Hide Names" : "Show Names"}
+                        </Button>
+                        <Button onClick={() => setShowModal(true)}>New Record</Button>
+                    </Row>
+                <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
+                    <FilterInput filteration={namesFilter}></FilterInput>
+                <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
+                </div>
+            </div>
+            <Modal show={showModal} hide={() => setShowModal(false)}>
+                <AddUser></AddUser>
+            </Modal>
+        </Fragment>
 )}
 
 export default App;
