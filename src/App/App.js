@@ -45,6 +45,11 @@ const App = () => {
         type : "girl"
     },
     ]);
+
+    const addNewUserHandler = (data) => {
+        console.log(data);
+    }
+
     const deleteHandeler = (e, selectedId) => {
         // const deleteOberation = state.filter((e, index) => (index !== clickedIndex));
         // newState(deleteOberation);
@@ -87,7 +92,7 @@ const App = () => {
                 </div>
             </div>
             <Modal show={showModal} hide={() => setShowModal(false)}>
-                <AddUser></AddUser>
+                <AddUser addNewUserHandler={addNewUserHandler}></AddUser>
             </Modal>
         </Fragment>
 )}
