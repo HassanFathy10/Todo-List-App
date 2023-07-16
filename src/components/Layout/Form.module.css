@@ -31,3 +31,11 @@
     font-size: 14px;
     border-radius: 5px;
 }
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}

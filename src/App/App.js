@@ -4,6 +4,7 @@ import Filter from '../components/filter/Filter';
 import CardList from '../components/Cardlist/cardList';
 import Modal from '../components/Modal/Modal';
 import Button from '../components/Layout/Button';
+import Row from '../components/Layout/Row';
 
 const App = () => {
     // const inputEl = useRef(null);
@@ -13,29 +14,33 @@ const App = () => {
     const [state, newState] = useState([{
         id: 1,
         name: "hassan",
-        Age: 24,
+        Age: "24",
         phone: "01143814036",
+        Address: "Alexandria",
         type : "boy"
     },
     {
         id: 2,
         name: "yasmeen",
-        Age: 25,
+        Age: "25",
         phone: "013565659494",
+        Address: "Alexandria",
         type: "girl"
     },
     {
         id: 3,
         name: "kareem",
-        Age: 22,
+        Age: "22",
         phone: "013565655",
+        Address: "Alexandria",
         type : "boy"
     },
     {
         id: 4,
         name: "jessy",
-        Age: 21,
+        Age: "21",
         phone: "013565652494",
+        Address: "Alexandria",
         type : "girl"
     },
     ]);
@@ -69,12 +74,12 @@ const App = () => {
     <div className={styles.main}>
         <Modal show={showModal} hide={() => setShowModal(false)}></Modal>
             <h1>List of Data</h1>
-            <div style={{ "display": "flex", "justifyContent": "center", "width": "20%" }}>
+            <Row>
                 <Button style={{ marginRight: "50px" }} onClick={toggleHandler}>
                 {cardToggle ? "Hide Names" : "Show Names"}
                 </Button>
                 <Button onClick={() => setShowModal(true)}>New Record</Button>
-            </div>
+            </Row>
         <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
             <Filter filteration={namesFilter}></Filter>
         <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
