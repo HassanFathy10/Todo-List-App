@@ -13,7 +13,6 @@ const AddUser = ({addNewUserHandler}) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-
         addNewUserHandler({
             id: Math.round(Math.random() * 100),
             name,
