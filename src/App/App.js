@@ -92,7 +92,7 @@ const App = () => {
                 </div>
             </div>
             <Modal show={showModal} hide={() => setShowModal(false)}>
-                <AddUser addNewUser={addNewUserHandler}></AddUser>
+                <AddUser addNewUser={addNewUserHandler} closeModal={() => setShowModal(false)}></AddUser>
             </Modal>
         </Fragment>
 )}

@@ -1,28 +1,26 @@
 import React, { Fragment } from "react";
 import ReactDom from "react-dom";
 import Styles from "./Modal.module.css";
-import AddUser from "../AddUser/Adduser";
-
 
 
 const Backdrop = ({ close, show }) => {
     return <div className={`${Styles.backdrop} ${show ? Styles.showBackdrop : null}`} onClick={close}></div>
 };
 
-const Overlay = ({ show }) => {
+const Overlay = ({ children, show }) => {
 
     return <div className={`${Styles.overlay} ${show ? Styles.showOverlay : null}`}>
-        <AddUser></AddUser>
+        {children}
     </div>
 };
 
-const Modal = ({ show, hide }) => {
+const Modal = ({ children, show, hide }) => {
     return (
             <Fragment>
                 {ReactDom.createPortal(
                     <Fragment>
                         <Backdrop close={hide} show={show}></Backdrop>
-                        <Overlay show ={show}></Overlay>
+                        <Overlay show={show}>{children}</Overlay>
                     </Fragment>,
                     document.getElementById("modal")
                 )}
