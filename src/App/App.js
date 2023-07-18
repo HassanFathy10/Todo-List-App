@@ -8,12 +8,11 @@ import Button from '../components/Layout/Button';
 import Row from '../components/Layout/Row';
 
 const App = () => {
-    // const inputEl = useRef(null);
     const [cardToggle, setCardToggle] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [filter, setfilter] = useState("");
     const [state, setState] = useState([{
-        id: 1,
+        id: 25,
         name: "hassan",
         age: "24",
         phone: "01143814036",
@@ -21,7 +20,7 @@ const App = () => {
         type : "boy"
     },
     {
-        id: 2,
+        id: 30,
         name: "yasmeen",
         age: "25",
         phone: "013565659494",
@@ -29,7 +28,7 @@ const App = () => {
         type: "girl"
     },
     {
-        id: 3,
+        id: 35,
         name: "kareem",
         age: "22",
         phone: "013565655",
@@ -37,7 +36,7 @@ const App = () => {
         type : "boy"
     },
     {
-        id: 4,
+        id: 4000,
         name: "jessy",
         age: "21",
         phone: "013565652494",
@@ -51,21 +50,14 @@ const App = () => {
     };
 
     const deleteHandeler = (e, selectedId) => {
-        // const deleteOberation = state.filter((e, index) => (index !== clickedIndex));
-        // newState(deleteOberation);
-        
+
         setState((prevState) => {
             return prevState.filter((el) => (el.id !== selectedId));
         });
-        console.log("inside", state); // old info
     };
-    console.log("outside", state); // new info
 
     const toggleHandler = () => setCardToggle(!cardToggle) ;
     
-    // const testHandler = () => console.log(inputEl.current.value);
-    
-    // const onClick = ()=> inputEl.current.focus();
     const namesFilter = (names) => {
         setfilter(names);
     };
@@ -88,7 +80,7 @@ const App = () => {
                     </Row>
                 <div style={{ "paddingTop": "10px" }} className={cardToggle ? styles.show : styles.hide}>
                     <FilterInput filteration={namesFilter}></FilterInput>
-                <CardList namesList={namesHandler()} type="boy" deleteFunc={deleteHandeler}></CardList>
+                <CardList namesList={namesHandler()} deleteFunc={deleteHandeler}></CardList>
                 </div>
             </div>
             <Modal show={showModal} hide={() => setShowModal(false)}>
