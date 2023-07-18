@@ -3,7 +3,7 @@ import Form from "../Layout/Form";
 import Button from "../Layout/Button";
 import Row from "../Layout/Row";
 
-const AddUser = ({addNewUser}) => {
+const AddUser = ({ addNewUser, closeModal }) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
@@ -21,6 +21,12 @@ const AddUser = ({addNewUser}) => {
             address,
             type,
         });
+        setName('');
+        setAge('');
+        setPhone('');
+        setType('');
+        setAddress('');
+        closeModal();
     };
     return ( 
         <Form onSubmit={onSubmitHandler}>

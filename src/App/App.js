@@ -12,7 +12,7 @@ const App = () => {
     const [cardToggle, setCardToggle] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [filter, setfilter] = useState("");
-    const [state, newState] = useState([{
+    const [state, setState] = useState([{
         id: 1,
         name: "hassan",
         age: "24",
@@ -47,14 +47,14 @@ const App = () => {
     ]);
 
     const addNewUserHandler = (data) => {
-        console.log(data);
+        setState((prevState) => setState([...prevState, data]));
     };
 
     const deleteHandeler = (e, selectedId) => {
         // const deleteOberation = state.filter((e, index) => (index !== clickedIndex));
         // newState(deleteOberation);
         
-        newState((prevState) => {
+        setState((prevState) => {
             return prevState.filter((el) => (el.id !== selectedId));
         });
         console.log("inside", state); // old info
