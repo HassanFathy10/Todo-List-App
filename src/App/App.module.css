@@ -1,3 +1,9 @@
+Fragment {
+    background: #9796f0;
+    background: -webkit-linear-gradient(to right, #9796f0, #fbc7d4);
+    background: linear-gradient(to right, #9796f0, #fbc7d4);
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -30,3 +36,4 @@ button{
 .hide{
     display: none;
 }
+
