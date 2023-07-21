@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import Styles from './FilterInput.module.css';
 
 const Filter = ({filteration}) => {
-    const [filter, setfilter] = useState("");
+    const [filter, setFilter] = useState("");
 
     const filterHandler = (e) => {
         const name = e.target.value;
-        setfilter(name);
+        setFilter(name);
         filteration(name);
     };
 
