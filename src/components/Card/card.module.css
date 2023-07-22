@@ -1,6 +1,6 @@
 .card{
     border:5px solid gold;
-    width: 500px;
+    width: 600px;
     padding: 10px;
     margin-bottom: 10px;
     position:relative;
@@ -24,3 +24,28 @@
 .deleteBtn:hover{
     background-color: red;
 }  
+
+@media screen and (min-width: 820px) {
+    .card {
+        width: 500px !important;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .card {
+        width: 400px;
+    }
+}
+
+
+@media screen and (min-width: 400px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 280px) {
+    .card {
+        width: 240px;
+    }
+}
