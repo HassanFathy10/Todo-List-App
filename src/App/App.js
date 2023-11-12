@@ -17,7 +17,7 @@ const App = () => {
         age: 24,
         phone: "01143814036",
         address: "Alexandria",
-        type : "boy"
+        type: "boy"
     },
     {
         id: 1,
@@ -33,7 +33,7 @@ const App = () => {
         age: 22,
         phone: "013565655",
         address: "Alexandria",
-        type : "boy"
+        type: "boy"
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ const App = () => {
         age: 21,
         phone: "013565652494",
         address: "Alexandria",
-        type : "girl"
+        type: "girl"
     },
     ]);
 
